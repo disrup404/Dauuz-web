@@ -1,63 +1,17 @@
-
-// Hamburger toggle
-
-const btn = document.getElementById("menu-btn");
-const nav = document.getElementById("nav-links");
-btn.addEventListener("click", () => {
-  btn.classList.toggle("active");
-  nav.classList.toggle("open");
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  const supabaseUrl = 'https://ydeczzyvfgwwmfornfef.supabase.co';
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZWN6enl2Zmd3d21mb3JuZmVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc5Njc1ODksImV4cCI6MjA4MzU0MzU4OX0.IBNkcqDJtQSurdKaic94iRrc4NYnO8m1e1bQzbkkstc";
-  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-
-
-
- 
-// Leaderboard rendering
- 
-const leaderboardList = document.getElementById("leaderboard-list");
-
-async function renderLeaderboard() {
-  leaderboardList.innerHTML = "<li>Loading...</li>";
-
-  // Fetch top 10 users by balance
-  const { data: users, error } = await supabase
-    .from("profiles")
-    .select("username, balance")
-    .order("balance", { ascending: false })
-    .limit(10);
-
-  if (error) return leaderboardList.innerHTML = `<li>Error: ${error.message}</li>`;
-  if (!users || users.length === 0) return leaderboardList.innerHTML = "<li>No users yet</li>";
-
-  leaderboardList.innerHTML = "";
-
-  users.forEach((user, index) => {
-    const li = document.createElement("li");
-    li.textContent = `${index + 1}. ${user.username} : ${user.balance.toFixed(6)} DUZ`;
-    li.style.opacity = 0;
-    leaderboardList.appendChild(li);
-
-    setTimeout(() => {
-      li.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-      li.style.opacity = 1;
-      li.style.transform = "translateY(0)";
-    }, 50);
-  });
-}
-
- 
-// Live refresh every 20 seconds
- 
-renderLeaderboard();
-setInterval(renderLeaderboard, 20000);
-
-
-
-
+  const menuButton=document.getElementById("menu-btn"),navLinks=document.getElementById("nav-links");
+  if(menuButton&&navLinks){menuButton.addEventListener("click",()=>{const open=menuButton.classList.toggle("active");navLinks.classList.toggle("open",open);menuButton.setAttribute("aria-expanded",String(open));});navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{menuButton.classList.remove("active");navLinks.classList.remove("open");menuButton.setAttribute("aria-expanded","false");}));}
+  const supabaseUrl="https://ydeczzyvfgwwmfornfef.supabase.co";
+  const supabaseKey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZWN6enl2Zmd3d21mb3JuZmVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc5Njc1ODksImV4cCI6MjA4MzU0MzU4OX0.IBNkcqDJtQSurdKaic94iRrc4NYnO8m1e1bQzbkkstc";
+  const supabase=window.supabase.createClient(supabaseUrl,supabaseKey);
+  const podium=document.getElementById("leaderboard-podium"),list=document.getElementById("leaderboard-list"),yourCard=document.getElementById("your-rank-card");
+  let refreshing=false,loaded=false;
+  const formatBalance=value=>{const amount=Number(value||0);return (Number.isFinite(amount)?amount:0).toFixed(6);};
+  function makeAvatar(name,large=false){const avatar=document.createElement("span");avatar.className="podium-avatar";avatar.textContent=String(name||"D").trim().charAt(0).toUpperCase()||"D";avatar.setAttribute("aria-hidden","true");return avatar;}
+  function makePodiumCard(user,rank){const card=document.createElement("article");card.className="podium-card "+(rank===1?"first":rank===2?"second":"third");const place=document.createElement("span");place.className="podium-place";place.textContent=rank===1?"01 · LEADER":rank===2?"02 · RUNNER-UP":"03 · THIRD";const name=String(user.username||"DAUUZ member");const avatar=makeAvatar(name);const member=document.createElement("div");member.className="podium-name";member.textContent=name;const balance=document.createElement("div");balance.className="podium-balance";balance.append(document.createTextNode(formatBalance(user.balance)));const unit=document.createElement("small");unit.textContent="DUZ BALANCE";balance.appendChild(unit);const caption=document.createElement("div");caption.className="podium-caption";caption.textContent=rank===1?"Currently setting the pace":rank===2?"Within reach of the lead":"A place among the leaders";card.append(place,avatar,member,balance,caption);return card;}
+  function renderPodium(users){podium.replaceChildren();if(!users.length){const state=document.createElement("div");state.className="podium-state";state.textContent="No contributors yet. Be the first to earn DUZ.";podium.appendChild(state);return;}const order=[users[1],users[0],users[2]].filter(Boolean);order.forEach(user=>{const rank=users.indexOf(user)+1;podium.appendChild(makePodiumCard(user,rank));});}
+  function renderRows(users){list.replaceChildren();if(!users.length){const empty=document.createElement("li");empty.className="state-row";empty.textContent="The next positions will appear here as more members climb the board.";list.appendChild(empty);return;}const fragment=document.createDocumentFragment();users.forEach((user,index)=>{const rank=index+4,row=document.createElement("li"),cell=document.createElement("div");cell.className="member-cell";const number=document.createElement("span");number.className="rank-number";number.textContent=String(rank);const avatar=document.createElement("span");avatar.className="member-avatar";const username=String(user.username||"DAUUZ member");avatar.textContent=username.trim().charAt(0).toUpperCase()||"D";avatar.setAttribute("aria-hidden","true");const identity=document.createElement("div"),name=document.createElement("div"),caption=document.createElement("div");name.className="member-name";name.textContent=username;caption.className="member-caption";caption.textContent="Community contributor";identity.append(name,caption);cell.append(number,avatar,identity);const balance=document.createElement("div");balance.className="member-balance";balance.append(document.createTextNode(formatBalance(user.balance)));const unit=document.createElement("small");unit.textContent="DUZ";balance.appendChild(unit);row.append(cell,balance);fragment.appendChild(row);});list.appendChild(fragment);}
+  async function renderYourRank(){const {data:{user}}=await supabase.auth.getUser();if(!user){yourCard.hidden=true;return;}const {data:profile,error}=await supabase.from("profiles").select("username,balance").eq("id",user.id).maybeSingle();if(error||!profile){yourCard.hidden=true;return;}const {count,error:countError}=await supabase.from("profiles").select("id",{count:"exact",head:true}).gt("balance",Number(profile.balance||0));if(countError){yourCard.hidden=true;return;}const rank=(count||0)+1;document.getElementById("your-rank-number").textContent="#"+rank;document.getElementById("your-rank-balance").textContent=formatBalance(profile.balance)+" DUZ";document.getElementById("your-rank-message").textContent=rank<=10?"You're currently inside the top 10. Keep your momentum.":"Keep contributing — every DUZ brings you closer to the top 10.";yourCard.hidden=false;}
+  async function renderLeaderboard(){if(refreshing)return;refreshing=true;if(!loaded)list.setAttribute("aria-busy","true");try{const {data:users,error}=await supabase.from("profiles").select("username,balance").order("balance",{ascending:false}).limit(10);if(error)throw error;const rows=users||[];renderPodium(rows.slice(0,3));renderRows(rows.slice(3,10));loaded=true;await renderYourRank();}catch(error){if(!loaded){podium.replaceChildren();list.replaceChildren();const state=document.createElement("li");state.className="state-row";state.textContent="We couldn't load the rankings. Please refresh the page to try again.";list.appendChild(state);}console.error("Leaderboard refresh failed:",error);}finally{refreshing=false;list.setAttribute("aria-busy","false");}}
+  renderLeaderboard();window.setInterval(renderLeaderboard,20000);
 });

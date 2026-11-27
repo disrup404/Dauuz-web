@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="styles/leaderboard.css">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10100f">
+  <title>Leaderboard | DAUUZ</title>
+  <link rel="stylesheet" href="styles/leaderboard.css">
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
 </head>
 <body>
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo"><img src="logo.png" alt="DUZ"></div>
-    <button class="menu-btn" id="menu-btn">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="logo" href="index.html" aria-label="DAUUZ home"><img src="logo.png" alt="DAUUZ"></a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="task.html">Earn DUZ</a>
-      <a href="leaderboard.html">Leaderboard</a>
-      <a href="login.html" id="logout-btn">Logout</a>
+      <a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="task.html">Earn DUZ</a>
+      <a href="leaderboard.html" aria-current="page">Leaderboard</a><a href="login.html" id="logout-btn">Logout</a>
     </nav>
   </header>
 
-  <main class="dashboard">
-    <h1>Top DUZ Earners</h1>
-    <ul id="leaderboard-list">
-      <li>Loading...</li>
-    </ul>
+  <main class="leaderboard-page">
+    <section class="leaderboard-intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> THE DAUUZ COMMUNITY</div>
+      <div class="intro-grid">
+        <div>
+          <h1>Earn your<br><span>place.</span></h1>
+          <p>Every contribution moves the community forward. See who's leading the board — and find your place among them.</p>
+          <div class="live-status"><span class="live-dot"></span><span>Live standings</span><span class="status-divider">·</span><span>Refreshes every 20 seconds</span></div>
+        </div>
+        <div class="intro-aside" aria-label="Leaderboard information">
+          <span class="aside-index">01 / COMMUNITY</span>
+          <span class="aside-rule"></span>
+          <strong>One community.<br>Many ways to contribute.</strong>
+          <span class="aside-note">Ranked by total DUZ balance</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="standings-section" aria-labelledby="standings-title">
+      <div class="section-heading">
+        <div><span class="section-kicker">THE ALL-TIME BOARD</span><h2 id="standings-title">Top contributors</h2></div>
+        <span class="board-tag"><span class="board-tag-dot"></span> GLOBAL RANKING</span>
+      </div>
+
+      <div id="leaderboard-podium" class="podium" aria-label="Top three contributors" aria-live="polite">
+        <div class="podium-state">Loading the leaders…</div>
+      </div>
+
+      <div class="list-heading"><div><span class="section-kicker">KEEP AN EYE ON THE CLIMB</span><h3>Next in line</h3></div><span class="list-range">RANK 04—10</span></div>
+      <div class="ranking-table">
+        <div class="table-labels"><span>RANK / MEMBER</span><span>DUZ BALANCE</span></div>
+        <ol id="leaderboard-list" aria-live="polite" aria-busy="true"><li class="state-row">Loading the rankings…</li></ol>
+        <div class="panel-foot"><span class="foot-mark"></span> Standings are calculated from members' current total DUZ balance.</div>
+      </div>
+    </section>
+
+    <section id="your-rank-card" class="your-rank-card" hidden aria-live="polite">
+      <div class="your-rank-copy"><span class="section-kicker">YOUR POSITION</span><h2>Your place on the board</h2><p id="your-rank-message">Your current all-time standing.</p></div>
+      <div class="your-rank-value"><span id="your-rank-number">—</span><small>YOUR RANK</small></div>
+      <div class="your-rank-balance"><strong id="your-rank-balance">—</strong><small>DUZ BALANCE</small></div>
+      <a href="task.html" class="rank-action">Earn more DUZ <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="leaderboard-cta">
+      <div><span class="section-kicker">MAKE YOUR NEXT MOVE</span><h2>The board is always moving.</h2><p>Take on a contribution and work your way up.</p></div>
+      <a href="task.html" class="cta-button">Explore contributions <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
 
-      <a href="how-it-works.html" class="floating-help-btn" title="How It Works">
-  ?
-</a>
-
-  <footer>
-    © 2026 DAUUZ : Built in public.
-  </footer>
-  
-
+  <a href="how-it-works.html" class="floating-help-btn" title="How It Works" aria-label="How it works">?</a>
+  <footer>© 2026 DAUUZ <span>·</span> Built in public.</footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/leaderboard.js"></script>
-
-  <script>
-  const btn = document.getElementById("menu-btn");
-  const links = document.getElementById("nav-links");
-
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
-    links.classList.toggle("open");
-  });
-</script>
-
 </body>
 </html>
-
