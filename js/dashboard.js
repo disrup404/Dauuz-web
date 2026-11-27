@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const supabaseUrl = "https://ydeczzyvfgwwmfornfef.supabase.co";
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZWN6enl2Zmd3bWZvcm5mZWYiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc2Nzk2NzU4OSwiZXhwIjoyMDgzNTQzNTg5fQ.IBNkcqDJtQSurdKaic94iRrc4NYnO8m1e1bQzbkkstc";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkZWN6enl2Zmd3d21mb3JuZmVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc5Njc1ODksImV4cCI6MjA4MzU0MzU4OX0.IBNkcqDJtQSurdKaic94iRrc4NYnO8m1e1bQzbkkstc";
   const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
   const dashboard = document.querySelector(".dashboard");
