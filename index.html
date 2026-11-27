@@ -3,160 +3,270 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DAUUZ | Elpis</title>
-
+  <meta name="theme-color" content="#101116" />
+  <meta name="description" content="Discover ways to contribute, take part in the DAUUZ community and earn DUZ recognition for verified participation." />
+  <title>DAUUZ — Explore contributions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/index.css" />
   <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
-
 </head>
-
 <body>
+  <div class="announcement">
+    <span class="announcement-dot"></span>
+    <span>DAUUZ IS IN PRE-LAUNCH</span>
+    <span class="announcement-separator">·</span>
+    <span>DUZ balances are currently tracked off-chain</span>
+  </div>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="DAUUZ Logo" class="logo">
-    </div>
-
-    <button class="menu-btn" id="menu-btn">
-      <span></span>
-      <span></span>
-      <span></span>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="DAUUZ home">
+      <img src="logo.png" alt="" />
+      <span>DAUUZ</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span>
     </button>
-
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="task.html">Earn</a>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Explore</a>
+      <a href="#how-it-works">How it works</a>
       <a href="leaderboard.html">Leaderboard</a>
+      <a class="nav-login" href="login.html">Log in</a>
+      <a class="nav-join" href="signup.html">Join DAUUZ <span>↗</span></a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="logo-wrap">
-      <img src="hero.png" alt="DAUUZ Symbol" class="logo-img">
-    </div>
+  <main>
+    <section class="explore-hero">
+      <div class="hero-content">
+        <div class="hero-label"><span class="hero-label-icon">✳</span> THE CONTRIBUTION NETWORK</div>
+        <h1>Make your effort<br /><span>count for something.</span></h1>
+        <p>Discover ways to contribute, support the community and build a record of the work you do. Every opportunity starts with action.</p>
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#opportunities">Explore opportunities <span>↓</span></a>
+          <a class="hero-secondary" href="how-it-works.html">How DAUUZ works <span>↗</span></a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-icon">✓</span>
+          <span>Free to join</span><i></i><span>Contribution-led</span><i></i><span>Built in public</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1300&q=85" alt="A diverse group collaborating around a table" fetchpriority="high" />
+        <div class="hero-image-shade"></div>
+        <div class="hero-image-tag"><span></span> COMMUNITY IN ACTION</div>
+        <div class="hero-image-caption">
+          <span>THE DAUUZ PRINCIPLE</span>
+          <strong>Good things happen<br />when people take part.</strong>
+        </div>
+        <div class="hero-image-index">01 <span>/</span> 04</div>
+      </div>
+    </section>
 
-    <h1>DAUUZ</h1>
-    <p class="tagline">Elpis | Man paves his own path</p>
+    <section class="featured-strip" aria-label="Featured contribution">
+      <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="People working together on a shared project" loading="lazy" />
+      </div>
+      <div class="featured-copy">
+        <span class="featured-kicker"><span></span> START HERE · COMMUNITY</span>
+        <h2>Small actions.<br /><em>Meaningful momentum.</em></h2>
+        <p>There are different ways to take part in DAUUZ. Find one that fits you and get started.</p>
+      </div>
+      <a class="featured-link" href="#opportunities" aria-label="Browse contribution opportunities">Explore<br />opportunities <span>↗</span></a>
+    </section>
 
-    <p class="subtitle">
-      DAUUZ is a fixed-supply participation token designed to reward
-      human effort  not speculation, or hype. <br>
-      Giving value to those often unnoted by the world.
-    </p>
-
-    <a class="btn" href="signup.html">Join Early</a>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="panel">
-    <h2>The Problem</h2>
-    <p>
-      Most digital systems reward money, automation, and attention farming.
-      Those without capital are left invisible, regardless of effort or contribution.
-    </p>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="panel alt">
-    <h2>The DAUUZ Approach</h2>
-    <p>
-      DAUUZ rewards participation, consistency, and meaningful action.
-      No venture capital advantage. No hidden minting.
-      Value is earned, and everyone deserves a chance.
-    </p>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="panel">
-    <h2>How It Works (Prelaunch)</h2>
-    <ul class="list">
-      <li>Complete simple, verifiable tasks</li>
-      <li>Earn DUZ tracked transparently</li>
-      <li>Early contributors are recognized</li>
-      <li>Blockchain integration comes later</li>
-    </ul>
-  </section>
-
-  <!-- TOKENOMICS -->
-  <section class="panel alt">
-    <h2>Token Structure</h2>
-    <p><strong>Total Supply:</strong> 30,000,000 DUZ (Fixed)</p>
-
-    <ul class="list">
-      <li>2M: Community & Airdrop</li>
-      <li>4M: Contributors, Builders & Team</li>
-      <li>10M: Zoi Reserve (Locked)</li>
-      <li>14M: Liquidity & Stability Reserve</li>
-    </ul>
-
-    <p class="note">
-      No VC allocation. No private minting. Full transparency.
-    </p>
-  </section>
-
-  <!-- ROADMAP -->
-  <section class="panel">
-    <h2>Roadmap</h2>
-
-    <div class="roadmap">
-      <div class="roadmap-phase">
-        <h3>Phase 1: Community & Airdrop (Now)</h3>
-        <ul class="list">
-          <li>Off-chain participation tracking</li>
-          <li>Community onboarding</li>
-          <li>Early contributor recognition</li>
-        </ul>
+    <section class="opportunities section-shell" id="opportunities">
+      <div class="section-topline">
+        <div>
+          <div class="eyebrow"><span></span> FIND YOUR NEXT MOVE</div>
+          <h2>Explore contributions</h2>
+          <p class="section-intro">Choose an activity. Complete it. Submit what’s needed for review.</p>
+        </div>
+        <div class="opportunity-count"><strong>06</strong><span>WAYS TO<br />PARTICIPATE</span></div>
       </div>
 
-      <div class="roadmap-phase">
-        <h3>Phase 2: on-chain</h3>
-        <ul class="list">
-          <li>ERC-20 deployment</li>
-          <li>Airdrop distribution</li>
-          <li>Public transparency & auditability</li>
-        </ul>
+      <div class="explore-controls">
+        <div class="filter-list" role="group" aria-label="Filter contribution categories">
+          <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All opportunities</button>
+          <button class="filter-chip" type="button" data-filter="social" aria-pressed="false">Social</button>
+          <button class="filter-chip" type="button" data-filter="wellness" aria-pressed="false">Wellness</button>
+          <button class="filter-chip" type="button" data-filter="community" aria-pressed="false">Community</button>
+          <button class="filter-chip" type="button" data-filter="feedback" aria-pressed="false">Feedback</button>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="opportunity-search" type="search" placeholder="Find an opportunity" aria-label="Search opportunities" />
+        </label>
       </div>
 
-      <div class="roadmap-phase">
-        <h3>Phase 3: Zoi Integration</h3>
-        <ul class="list">
-          <li>Mental wellness application</li>
-          <li>Zoi Points → DUZ cycle</li>
-          <li>Long-term value loop</li>
-        </ul>
+      <div class="opportunity-layout">
+        <div class="opportunity-grid" id="opportunity-grid">
+          <article class="opportunity-card" data-category="social" data-search="share x twitter social post">
+            <a class="card-image" href="task.html" aria-label="Explore Share on X">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Creator working with a laptop and smartphone" loading="lazy" />
+              <span class="image-badge">SOCIAL</span><span class="card-arrow">↗</span>
+            </a>
+            <div class="card-content">
+              <div class="card-meta"><span>COMMUNITY REACH</span><span>01 / 06</span></div>
+              <h3>Share on X</h3>
+              <p>Help more people discover DAUUZ by sharing a post and tagging the official account.</p>
+              <div class="card-bottom"><div class="reward"><small>REWARD</small><strong>0.00125 <i>DUZ</i></strong></div><a href="task.html" class="card-action">View task <span>↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" data-category="wellness" data-search="daily wellness routine health">
+            <a class="card-image" href="daily.html" aria-label="Explore daily wellness routine">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80" alt="Person practicing a calm morning wellness routine" loading="lazy" />
+              <span class="image-badge">WELLNESS</span><span class="card-arrow">↗</span>
+            </a>
+            <div class="card-content">
+              <div class="card-meta"><span>PERSONAL GROWTH</span><span>02 / 06</span></div>
+              <h3>Daily wellness</h3>
+              <p>Make space for a consistent daily routine and record your wellness practice.</p>
+              <div class="card-bottom"><div class="reward"><small>REWARD</small><strong>0.014 <i>DUZ</i></strong></div><a href="daily.html" class="card-action">Start routine <span>↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" data-category="community" data-search="survey community opinion">
+            <a class="card-image" href="task.html" aria-label="Explore community survey">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Small team sharing ideas in a discussion" loading="lazy" />
+              <span class="image-badge">COMMUNITY</span><span class="card-arrow">↗</span>
+            </a>
+            <div class="card-content">
+              <div class="card-meta"><span>SHARE YOUR VIEW</span><span>03 / 06</span></div>
+              <h3>Community survey</h3>
+              <p>Answer the community survey and help shape decisions about the project.</p>
+              <div class="card-bottom"><div class="reward"><small>REWARD</small><strong>0.005 <i>DUZ</i></strong></div><a href="task.html" class="card-action">Take survey <span>↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" data-category="feedback" data-search="feedback product experience">
+            <a class="card-image" href="feedback.html" aria-label="Explore send feedback">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="Notebook and pen ready for thoughtful feedback" loading="lazy" />
+              <span class="image-badge">FEEDBACK</span><span class="card-arrow">↗</span>
+            </a>
+            <div class="card-content">
+              <div class="card-meta"><span>HELP US IMPROVE</span><span>04 / 06</span></div>
+              <h3>Send feedback</h3>
+              <p>Tell us what works, what doesn’t and what would make the experience better.</p>
+              <div class="card-bottom"><div class="reward"><small>REWARD</small><strong>0.0014 <i>DUZ</i></strong></div><a href="feedback.html" class="card-action">Give feedback <span>↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" data-category="community" data-search="refer friend referral invite">
+            <a class="card-image" href="task.html" aria-label="Explore refer a friend">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Friends spending time together outdoors" loading="lazy" />
+              <span class="image-badge">REFERRAL</span><span class="card-arrow">↗</span>
+            </a>
+            <div class="card-content">
+              <div class="card-meta"><span>GROW THE NETWORK</span><span>05 / 06</span></div>
+              <h3>Refer a friend</h3>
+              <p>Invite someone new to join the network and take part in the community.</p>
+              <div class="card-bottom"><div class="reward"><small>REWARD</small><strong>0.001 <i>DUZ</i></strong></div><a href="task.html" class="card-action">Get referral link <span>↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" data-category="community" data-search="ideas suggest build product">
+            <a class="card-image" href="task.html#ideaContent" aria-label="Explore submit an idea">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Creative planning and idea development" loading="lazy" />
+              <span class="image-badge">IDEAS</span><span class="card-arrow">↗</span>
+            </a>
+            <div class="card-content">
+              <div class="card-meta"><span>SHAPE WHAT'S NEXT</span><span>06 / 06</span></div>
+              <h3>Submit an idea</h3>
+              <p>Share a genuine idea that could improve DAUUZ. Adopted ideas may qualify for a reward.</p>
+              <div class="card-bottom"><div class="reward"><small>REWARD</small><strong>1 <i>DUZ*</i></strong></div><a href="task.html#ideaContent" class="card-action">Share idea <span>↗</span></a></div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="progress-card">
+          <div class="progress-card-top"><span>YOUR DAUUZ JOURNEY</span><span class="progress-orb">✳</span></div>
+          <h3>Your next step<br /><em>starts here.</em></h3>
+          <p>Create an account to access activities, submit contributions and track your DUZ balance.</p>
+          <div class="progress-visual"><div class="progress-track"><span></span></div><div class="progress-labels"><span>NEW CONTRIBUTOR</span><span>READY TO BEGIN</span></div></div>
+          <a href="signup.html" class="progress-cta">Create your account <span>↗</span></a>
+          <div class="progress-foot"><span>NO PAYMENT REQUIRED</span><span>01 / 01</span></div>
+        </aside>
       </div>
-    </div>
-  </section>
+      <p class="reward-note">*Idea rewards apply only if an idea is genuine and adopted by the team. Rewards are subject to task rules and verification. DUZ is currently tracked off-chain and is not presently tradeable.</p>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Build With Us</h2>
-    <p>
-      DAUUZ is built slowly, openly, and deliberately.
-      Early participants shape the future.
-    </p>
+    <section class="how-section section-shell" id="how-it-works">
+      <div class="how-heading">
+        <div><div class="eyebrow"><span></span> SIMPLE BY DESIGN</div><h2>Take part.<br /><em>Build your record.</em></h2></div>
+        <a href="how-it-works.html" class="how-more">Read the full guide <span>↗</span></a>
+      </div>
+      <div class="how-steps">
+        <article><span>01</span><div class="how-step-icon">＋</div><h3>Join the network</h3><p>Create an account and explore the opportunities available to you.</p></article>
+        <article><span>02</span><div class="how-step-icon">↗</div><h3>Make a contribution</h3><p>Complete an activity and submit proof wherever the task requires it.</p></article>
+        <article><span>03</span><div class="how-step-icon">✳</div><h3>Get recognised</h3><p>Once verified, eligible rewards are added to your DUZ balance.</p></article>
+      </div>
+    </section>
 
-    <a class="btn" href="signup.html">Start Participating</a>
-  </section>
+    <section class="token-note">
+      <div class="token-note-inner">
+        <div><div class="eyebrow"><span></span> TRANSPARENCY FIRST</div><h2>Built around effort.<br /><em>Not speculation.</em></h2></div>
+        <div class="token-note-copy"><p>DAUUZ currently records participation and DUZ balances off-chain. Blockchain deployment is planned for a later stage; DUZ is not live on-chain or tradeable at this time.</p><a href="how-it-works.html">Understand the model <span>↗</span></a></div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 DAUUZ | Built in public. All rights reserved.
+    <section class="final-cta section-shell">
+      <div class="final-cta-mark">D.</div>
+      <div class="final-cta-copy"><div class="eyebrow"><span></span> YOUR MOVE</div><h2>There's more than<br />one way to <em>contribute.</em></h2><p>Find an opportunity that fits. Your first step can be a small one.</p><a href="signup.html" class="button button-primary">Join DAUUZ <span>↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html"><img src="logo.png" alt="" /><span>DAUUZ</span></a>
+    <span class="footer-line">MAN PAVES HIS OWN PATH.</span>
+    <div class="footer-links"><a href="how-it-works.html">How it works</a><a href="task.html">Participate</a><a href="leaderboard.html">Leaderboard</a></div>
+    <span class="copyright">© 2026 DAUUZ</span>
   </footer>
 
-  <!-- MENU SCRIPT -->
   <script>
-    const btn = document.getElementById("menu-btn");
-    const links = document.getElementById("nav-links");
-
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("active");
-      links.classList.toggle("open");
+    const menuButton = document.getElementById("menu-btn");
+    const navigation = document.getElementById("nav-links");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.classList.toggle("active", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
     });
-  </script>
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
 
+    const filterButtons = document.querySelectorAll(".filter-chip");
+    const cards = document.querySelectorAll(".opportunity-card");
+    const searchInput = document.getElementById("opportunity-search");
+    let activeFilter = "all";
+    function filterOpportunities() {
+      const term = searchInput.value.trim().toLowerCase();
+      cards.forEach((card) => {
+        const categoryMatch = activeFilter === "all" || card.dataset.category === activeFilter;
+        const searchMatch = !term || (card.dataset.search + " " + card.innerText).toLowerCase().includes(term);
+        card.hidden = !(categoryMatch && searchMatch);
+      });
+    }
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach((item) => {
+          const selected = item === button;
+          item.classList.toggle("active", selected);
+          item.setAttribute("aria-pressed", String(selected));
+        });
+        filterOpportunities();
+      });
+    });
+    searchInput.addEventListener("input", filterOpportunities);
+  </script>
 </body>
 </html>
