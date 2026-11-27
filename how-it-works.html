@@ -12,7 +12,7 @@
     <header class="navbar">
       <div class="logo"><img src="logo.png" alt="DUZ"></div>
 
-      <button class="menu-btn" id="menu-btn">
+      <button class="menu-btn" id="menu-btn" type="button" aria-controls="nav-links" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -160,13 +160,20 @@
 
 
   <script>
-    // Hamburger toggle
-const btn = document.getElementById("menu-btn");
-const nav = document.getElementById("nav-links");
-btn.addEventListener("click", () => {
-  btn.classList.toggle("active");
-  nav.classList.toggle("open");
-});
+    const btn = document.getElementById("menu-btn");
+    const nav = document.getElementById("nav-links");
+    btn.setAttribute("aria-label", "Toggle navigation");
+    btn.setAttribute("aria-expanded", "false");
+    btn.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      btn.classList.toggle("active", isOpen);
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      btn.classList.remove("active");
+      btn.setAttribute("aria-expanded", "false");
+    }));
   </script>
 
 </body>
