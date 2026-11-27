@@ -107,3 +107,30 @@ button{font:inherit;cursor:pointer}
  .floating-help-btn{right:17px;bottom:17px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* Profile editing */
+.welcome-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.profile-edit-trigger{padding:12px 15px;border:1px solid var(--line);border-radius:5px;background:transparent;color:#e8eaf0;font-size:11px;font-weight:700}
+.profile-edit-trigger span{margin-left:9px;color:var(--accent)}
+.profile-edit-trigger:hover{border-color:rgba(214,173,85,.45);background:rgba(214,173,85,.06)}
+.profile-modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:20px}
+.profile-modal.open{display:flex}
+.profile-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.76);backdrop-filter:blur(7px)}
+.profile-dialog{position:relative;width:min(100%,440px);padding:30px;border:1px solid rgba(214,173,85,.25);border-radius:12px;background:#1b1e27;box-shadow:0 25px 90px rgba(0,0,0,.5)}
+.profile-close{position:absolute;top:15px;right:17px;border:0;background:none;color:#aab0bc;font-size:25px}
+.profile-dialog h2{margin-top:15px;font:800 29px var(--display);letter-spacing:-.05em}
+.profile-modal-copy{margin:8px 0 24px;color:var(--muted);font-size:11px}
+.profile-dialog form label{display:block;margin-bottom:8px;color:#e8eaf0;font-size:11px;font-weight:700}
+.profile-dialog input{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.13);border-radius:5px;outline:none;background:#11131a;color:#fff;font:13px var(--sans)}
+.profile-dialog input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(214,173,85,.1)}
+.profile-dialog form small{display:block;margin-top:8px;color:#858c99;font-size:9px;line-height:1.6}
+.profile-message{min-height:20px;margin-top:12px;color:#e2b8a4;font-size:10px}
+.profile-message.success{color:#8bc99e}
+.profile-form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:8px}
+.profile-cancel,.profile-save{padding:11px 14px;border-radius:5px;font-size:10px;font-weight:700}
+.profile-cancel{border:1px solid var(--line);background:transparent;color:#d8dbe2}
+.profile-save{border:1px solid var(--accent);background:var(--accent);color:#21190b}
+.profile-save:disabled{opacity:.6;cursor:wait}
+.profile-save span{margin-left:8px}
+@media(max-width:760px){.welcome-actions{width:100%}.welcome-actions>*{flex:1;text-align:center;justify-content:center}}
