@@ -3,76 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <meta name="theme-color" content="#101116">
+  <title>Your Dashboard | DAUUZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/dashboard.css">
   <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
 </head>
 <body>
-  <!-- Navbar -->
-    <header class="navbar">
-      <div class="logo"><img src="logo.png" alt="DUZ"></div>
+  <div class="announcement"><span></span> DAUUZ MEMBER AREA <i>/</i> YOUR CONTRIBUTION, AT A GLANCE</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="DAUUZ home"><img src="logo.png" alt="">DAUUZ</a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="task.html">Explore</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a class="nav-login" href="login.html" id="logout-btn">Logout</a>
+    </nav>
+  </header>
 
-      <button class="menu-btn" id="menu-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="task.html">Earn</a>
-        <a href="leaderboard.html">Leaderboard</a>
-        <a href="login.html" id="logout-btn">Logout</a>
-      </nav>
-    </header>
-
-  <!-- Dashboard content -->
   <main class="dashboard">
-    <h1>Welcome, <span id="username-display">User</span></h1>
+    <section class="welcome-row">
+      <div>
+        <div class="eyebrow"><span></span> YOUR PERSONAL OVERVIEW</div>
+        <h1>Good to see you,<br><em id="username-display">User</em>.</h1>
+        <p>Here’s where your DAUUZ activity stands. Keep contributing and track your progress as it grows.</p>
+      </div>
+      <a class="explore-link" href="task.html">Explore contributions <span>↗</span></a>
+    </section>
 
-    <div class="balance-card">
-      <h2>Your DUZ Balance:</h2>
-      <p id="balance">0 DUZ</p>
-    </div>
+    <section class="balance-card" aria-label="DUZ balance">
+      <div class="balance-top"><span class="balance-kicker">YOUR CURRENT BALANCE</span><span class="balance-status"><i></i> MEMBER ACCOUNT</span></div>
+      <div class="balance-content">
+        <div><div class="balance-label">Available DUZ</div><p id="balance">0 DUZ</p></div>
+        <div class="balance-mark" aria-hidden="true">D<span>·</span></div>
+      </div>
+      <div class="balance-bottom"><span>YOUR CONTRIBUTIONS BUILD YOUR BALANCE.</span><span>DAUUZ / ACCOUNT</span></div>
+    </section>
 
-    <div class="recent-rewards">
-      <h3>Pending Tasks</h3>
-      <ul id="pending-list"></ul>
-    </div>
+    <section class="activity-section">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> CONTRIBUTION TRACKER</div><h2>Your activity</h2><p>Follow the progress of the tasks you’ve submitted.</p></div>
+        <a href="task.html" class="text-link">Find something to do <span>→</span></a>
+      </div>
+      <div class="activity-grid">
+        <article class="activity-panel">
+          <div class="panel-heading"><div><span class="panel-index">01</span><h3>Pending review</h3></div><span class="panel-state pending-state">AWAITING APPROVAL</span></div>
+          <p class="panel-description">Submissions currently waiting for the team to review.</p>
+          <ul id="pending-list" class="activity-list"></ul>
+        </article>
+        <article class="activity-panel">
+          <div class="panel-heading"><div><span class="panel-index">02</span><h3>Completed</h3></div><span class="panel-state complete-state">APPROVED</span></div>
+          <p class="panel-description">Your approved contributions and the DUZ rewards credited.</p>
+          <ul id="completed-list" class="activity-list"></ul>
+        </article>
+      </div>
+    </section>
 
-      <div class="recent-rewards">
-        <h3>Completed Tasks</h3>
-        <ul id="completed-list"></ul>
-    </div>
-
-
+    <section class="next-step">
+      <div class="next-icon">↗</div>
+      <div><span>KEEP YOUR MOMENTUM</span><h2>There’s more than one way to contribute.</h2><p>Explore community, social, wellness and idea-based activities.</p></div>
+      <a href="task.html">Explore activities <b>→</b></a>
+    </section>
   </main>
 
-
-
-  <a href="how-it-works.html" class="floating-help-btn" title="How It Works">
-  ?
-  </a>
-
-  <footer>
-    © 2026 DAUUZ : Built in public.
-  </footer>
+  <a href="how-it-works.html" class="floating-help-btn" title="How It Works" aria-label="How it works">?</a>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">DAUUZ</a><span>CONTRIBUTION IS THE FOUNDATION.</span><span>© 2026 DAUUZ · BUILT IN PUBLIC.</span></footer>
 
   <script>
-  const btn = document.getElementById("menu-btn");
-  const links = document.getElementById("nav-links");
-
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
-    links.classList.toggle("open");
-  });
-</script>
-
+    (() => {
+      const btn = document.getElementById("menu-btn");
+      const links = document.getElementById("nav-links");
+      btn.addEventListener("click", () => {
+        const open = btn.classList.toggle("active");
+        links.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", String(open));
+      });
+      links.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+        btn.classList.remove("active");
+        links.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }));
+    })();
+  </script>
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script src="js/dashboard.js"></script>
-
-
-
 </body>
 </html>
