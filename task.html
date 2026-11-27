@@ -1,112 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn DUZ</title>
-    <link rel="stylesheet" href="styles/tasks.css">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101116">
+  <title>Explore Contributions | DAUUZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tasks.css">
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="logo"><img src="logo.png" alt="DUZ" class="logo"></div>
-    <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+  <div class="announcement"><span class="announcement-dot"></span> THE DAUUZ CONTRIBUTION HUB <span class="announcement-separator">/</span> EARN DUZ BY TAKING PART</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="DAUUZ home"><img src="logo.png" alt="">DAUUZ</a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Dashboard</a>
-      <a href="task.html">Tasks</a>
+      <a class="active" href="task.html">Explore</a>
       <a href="leaderboard.html">Leaderboard</a>
-      <a href="login.html" id="logout-btn">Logout</a>
+      <a class="nav-login" href="login.html" id="logout-btn">Logout</a>
     </nav>
   </header>
 
-  <main class="dashboard">
-    <h1>Earn DUZ</h1>
-
-    <div class="task-card">
-      <h2>Referral</h2>
-      <p>Reward: 0.001 DUZ</p>
-      <button id="referral-btn">Generate Referral Link</button>
-      <p id="referral-link"></p>
-    </div>
-
-    <div class="task-card">
-      <h2>📱 Post on X (Twitter)</h2>
-      <p class="task-reward">Reward: 0.00125 DUZ per post (max 4/day)</p>
-      
-      <div class="task-instructions">
-        <h4>How to complete:</h4>
-        <ol>
-          <li>Follow <a href="https://x.com/dauuz_official" target="_blank" style="color: #1DA1F2;">@DUZ</a> on X</li>
-          <li>Create a post about DAUUZ (be creative!)</li>
-          <li>Tag <strong>@dauuz_official</strong> in your post</li>
-          <li>Hashtag <strong>#DUZ</strong> in your post</li>
-          <li>Take a screenshot from YOUR PROFILE showing:
-            <ul>
-              <li>Your post with our tag visible</li>
-              <li>Your username at the top</li>
-              <li>Post timestamp</li>
-            </ul>
-          </li>
-          <li>Submit screenshot + your X username below</li>
-        </ol>
+  <main>
+    <section class="tasks-hero">
+      <div class="tasks-hero-copy">
+        <div class="eyebrow"><span></span> YOUR NEXT CONTRIBUTION STARTS HERE</div>
+        <h1>Make your<br>time <em>count.</em></h1>
+        <p>Discover ways to contribute to DAUUZ, support the community and earn DUZ. Choose an activity that fits you and get started.</p>
+        <div class="hero-facts"><span><b>06</b> CONTRIBUTION TYPES</span><i></i><span><b>DUZ</b> REWARDS</span></div>
       </div>
-      
-      <form id="x-task-form">
-        <div class="form-group">
-          <label>Your X Username (without @)</label>
-          <input type="text" id="x-username" placeholder="e.g., elonmusk" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Screenshot of your post (from your profile)</label>
-          <input type="file" id="x-screenshot" accept="image/*" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Post URL (optional, helps us verify faster)</label>
-          <input type="url" id="x-post-url" placeholder="https://x.com/yourhandle/status/...">
-        </div>
-        
-        <button type="submit" id="x-submit-btn">Submit for Approval</button>
-      </form>
-    </div>
-    
-    <div class="task-card">
-      <h2>Survey</h2>
-      <p>Reward: 0.005 DUZ</p>
-      <button id="survey-btn">Take Survey</button>
-    </div>
+      <div class="tasks-hero-image">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85" alt="People collaborating around a table">
+        <div class="hero-image-overlay"></div>
+        <div class="hero-image-caption"><span>CONTRIBUTE TO SOMETHING BIGGER</span><strong>Small actions.<br>Shared progress.</strong></div>
+        <div class="hero-image-index">DAUUZ <span>—</span> 01 / 06</div>
+      </div>
+    </section>
 
-    <div class="task-card">
-      <h2>Send Feedback</h2>
-      <p>Reward: 0.0014 DUZ</p>
-      <button id="feedback-btn"><a href="feedback.html" style="text-decoration: none; color: #0f0f0f;">Tell us about your experience</a></button>
-    </div>
+    <section class="task-explorer">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> FIND YOUR WAY IN</div><h2>Explore contributions</h2><p>Pick an activity and see how you can take part.</p></div>
+        <div class="live-count"><strong>06</strong><span>WAYS TO<br>CONTRIBUTE</span></div>
+      </div>
 
-    <div class="task-card">
-      <h2>Wellness Routine</h2>
-      <p>Reward: 0.014 DUZ</p>
-      <button id="routine-btn"><a href="daily.html" style="text-decoration: none; color: #0f0f0f;">Start your daily routine</a></button>
-    </div>
+      <div class="explore-toolbar">
+        <div class="filter-list" aria-label="Filter contribution types">
+          <button class="filter-chip active" data-filter="all" type="button">All activities</button>
+          <button class="filter-chip" data-filter="social" type="button">Social</button>
+          <button class="filter-chip" data-filter="community" type="button">Community</button>
+          <button class="filter-chip" data-filter="wellness" type="button">Wellness</button>
+          <button class="filter-chip" data-filter="ideas" type="button">Ideas</button>
+        </div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="task-search" type="search" placeholder="Find an activity..." aria-label="Search activities"></label>
+      </div>
 
-    <div class="task-card">
-      <h2>Ideas</h2>
-      <p>Reward: 1 DUZ (if your idea is genuine and the team adopt it)</p>
-      <textarea id="ideaContent" placeholder="Type your idea here..."></textarea><br>
-      <button id="idea-btn">Submit Idea</button>
-    </div>
+      <div class="task-grid" id="task-grid">
+        <article class="task-card" data-category="community" data-search="referral invite friends community share">
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" alt="Friends sharing a meal"><span class="image-label">COMMUNITY</span><span class="image-symbol">↗</span></div>
+          <div class="task-card-body"><div class="task-meta"><span>01 / INVITE</span><span class="task-status">AVAILABLE</span></div><h2>Bring someone along</h2><p>Invite people to discover DAUUZ and grow the community through your referral.</p>
+            <div class="reward-row"><div class="reward"><small>REWARD</small><strong>0.001 <i>DUZ</i></strong></div><button id="referral-btn" class="task-action" type="button">Generate code <span>↗</span></button></div>
+            <p id="referral-link" class="inline-result" aria-live="polite"></p>
+          </div>
+        </article>
+
+        <article class="task-card task-card-featured" data-category="social" data-search="post on x twitter awareness share social media">
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=85" alt="Social media app icons"><span class="image-label">SOCIAL IMPACT</span><span class="image-symbol">↗</span></div>
+          <div class="task-card-body"><div class="task-meta"><span>02 / SPREAD THE WORD</span><span class="task-status">UP TO 4 DAILY</span></div><h2>Share DAUUZ on X</h2><p>Help more people discover the project. Publish a post, tag our account and submit proof for review.</p>
+            <div class="reward-row"><div class="reward"><small>PER APPROVED POST</small><strong>0.00125 <i>DUZ</i></strong></div><a class="task-action" href="#x-submission">View details <span>↓</span></a></div>
+            <div class="task-detail" id="x-submission">
+              <div class="detail-heading"><span>HOW TO COMPLETE</span><span>MAX 4 / DAY</span></div>
+              <ol class="instruction-list">
+                <li>Follow <a href="https://x.com/dauuz_official" target="_blank" rel="noopener noreferrer">@dauuz_official</a> on X.</li>
+                <li>Create a post about DAUUZ and tag <strong>@dauuz_official</strong>.</li>
+                <li>Include <strong>#DUZ</strong> and take a screenshot from your profile showing your username, post and timestamp.</li>
+                <li>Submit your details and screenshot below for approval.</li>
+              </ol>
+              <form id="x-task-form" class="submission-form">
+                <div class="form-group"><label for="x-username">X username (without @)</label><input type="text" id="x-username" placeholder="e.g. yourhandle" required></div>
+                <div class="form-group"><label for="x-screenshot">Screenshot of your post</label><input type="file" id="x-screenshot" accept="image/*" required></div>
+                <div class="form-group"><label for="x-post-url">Post URL <span>(optional)</span></label><input type="url" id="x-post-url" placeholder="https://x.com/yourhandle/status/..."></div>
+                <button type="submit" id="x-submit-btn" class="submit-button">Submit for approval <span>→</span></button>
+              </form>
+            </div>
+          </div>
+        </article>
+
+        <article class="task-card" data-category="community" data-search="survey questionnaire research feedback">
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Team discussing ideas at a meeting"><span class="image-label">RESEARCH</span><span class="image-symbol">↗</span></div>
+          <div class="task-card-body"><div class="task-meta"><span>03 / SHARE YOUR VIEW</span><span class="task-status">CHECK BACK</span></div><h2>Take a survey</h2><p>Share your perspective through community surveys and help shape future decisions.</p>
+            <div class="reward-row"><div class="reward"><small>REWARD</small><strong>0.005 <i>DUZ</i></strong></div><button id="survey-btn" class="task-action" type="button">Check availability <span>↗</span></button></div>
+          </div>
+        </article>
+
+        <article class="task-card" data-category="community" data-search="feedback experience suggestions improve">
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Colleagues collaborating on a project"><span class="image-label">FEEDBACK</span><span class="image-symbol">↗</span></div>
+          <div class="task-card-body"><div class="task-meta"><span>04 / HELP US IMPROVE</span><span class="task-status">AVAILABLE</span></div><h2>Send feedback</h2><p>Tell us what is working, what is not and what would make the DAUUZ experience better.</p>
+            <div class="reward-row"><div class="reward"><small>REWARD</small><strong>0.0014 <i>DUZ</i></strong></div><button id="feedback-btn" class="task-action" type="button">Share feedback <span>↗</span></button></div>
+          </div>
+        </article>
+
+        <article class="task-card" data-category="wellness" data-search="wellness daily routine healthy habits wellbeing">
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80" alt="Person practising a calm wellness routine"><span class="image-label">WELLNESS</span><span class="image-symbol">↗</span></div>
+          <div class="task-card-body"><div class="task-meta"><span>05 / DAILY PRACTICE</span><span class="task-status">AVAILABLE</span></div><h2>Wellness routine</h2><p>Make space for a simple daily wellbeing routine and build consistency one day at a time.</p>
+            <div class="reward-row"><div class="reward"><small>REWARD</small><strong>0.014 <i>DUZ</i></strong></div><button id="routine-btn" class="task-action" type="button">Start routine <span>↗</span></button></div>
+          </div>
+        </article>
+
+        <article class="task-card" data-category="ideas" data-search="ideas suggestions innovation propose">
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1455390582262-044cDead8028?auto=format&fit=crop&w=900&q=80" alt="Notebook ready for new ideas"><span class="image-label">OPEN IDEAS</span><span class="image-symbol">↗</span></div>
+          <div class="task-card-body"><div class="task-meta"><span>06 / THINK FORWARD</span><span class="task-status">OPEN SUBMISSION</span></div><h2>Submit an idea</h2><p>Have a genuine idea that could improve DAUUZ? Share it with the team for consideration.</p>
+            <div class="reward-row"><div class="reward"><small>IF ADOPTED</small><strong>1 <i>DUZ</i></strong></div><span class="review-note">TEAM REVIEW</span></div>
+            <div class="idea-form"><label for="ideaContent">Your idea</label><textarea id="ideaContent" placeholder="Describe your idea and why it could make a difference..."></textarea><button id="idea-btn" class="submit-button" type="button">Submit idea <span>→</span></button></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>No activities match that search. Try another keyword or category.</p>
+      <p class="reward-disclaimer">Rewards shown are subject to review and approval where applicable. DUZ balances are tracked off-chain at this stage.</p>
+    </section>
   </main>
-    <a href="how-it-works.html" class="floating-help-btn" title="How It Works">
-  ?
-</a>
 
-  <footer>
-    © 2026 DAUUZ : Built in public.
-  </footer>
-  
+  <a href="how-it-works.html" class="floating-help-btn" title="How It Works" aria-label="How it works">?</a>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">DAUUZ</a><span>CONTRIBUTION IS THE FOUNDATION.</span><span>© 2026 DAUUZ · BUILT IN PUBLIC.</span></footer>
+
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script src="js/tasks.js"></script>
+  <script>
+    (() => {
+      const menuButton = document.getElementById('menu-btn');
+      const nav = document.getElementById('nav-links');
+      if (menuButton && nav) {
+        menuButton.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          menuButton.classList.toggle('active', open);
+          menuButton.setAttribute('aria-expanded', String(open));
+        });
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          menuButton.classList.remove('active');
+          menuButton.setAttribute('aria-expanded', 'false');
+        }));
+      }
+      const chips = [...document.querySelectorAll('.filter-chip')];
+      const cards = [...document.querySelectorAll('.task-card')];
+      const search = document.getElementById('task-search');
+      const empty = document.getElementById('empty-state');
+      let active = 'all';
+      function filterCards() {
+        const term = search.value.trim().toLowerCase();
+        let shown = 0;
+        cards.forEach(card => {
+          const matchesCategory = active === 'all' || card.dataset.category === active;
+          const matchesSearch = !term || (card.dataset.search + ' ' + card.innerText).toLowerCase().includes(term);
+          card.hidden = !(matchesCategory && matchesSearch);
+          if (!card.hidden) shown++;
+        });
+        empty.hidden = shown !== 0;
+      }
+      chips.forEach(chip => chip.addEventListener('click', () => {
+        active = chip.dataset.filter;
+        chips.forEach(item => item.classList.toggle('active', item === chip));
+        filterCards();
+      }));
+      search.addEventListener('input', filterCards);
+    })();
+  </script>
 </body>
 </html>
