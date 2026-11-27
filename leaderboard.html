@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="styles/leaderboard.css">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10100f">
+  <title>Leaderboard | DAUUZ</title>
+  <link rel="stylesheet" href="styles/leaderboard.css">
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" sizes="156x156">
 </head>
 <body>
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo"><img src="logo.png" alt="DUZ"></div>
-    <button class="menu-btn" id="menu-btn">
+    <a class="logo" href="index.html" aria-label="DAUUZ home"><img src="logo.png" alt="DAUUZ"></a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Dashboard</a>
       <a href="task.html">Earn DUZ</a>
-      <a href="leaderboard.html">Leaderboard</a>
+      <a href="leaderboard.html" aria-current="page">Leaderboard</a>
       <a href="login.html" id="logout-btn">Logout</a>
     </nav>
   </header>
 
-  <main class="dashboard">
-    <h1>Top DUZ Earners</h1>
-    <ul id="leaderboard-list">
-      <li>Loading...</li>
-    </ul>
+  <main class="leaderboard-page">
+    <section class="leaderboard-intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> THE DAUUZ COMMUNITY</div>
+      <h1>Every contribution<br><span>counts.</span></h1>
+      <p>See who's making moves, earning DUZ, and helping shape the community.</p>
+      <div class="live-status"><span class="live-dot"></span><span>Live rankings</span><span class="status-divider">·</span><span>Updates every 20 seconds</span></div>
+    </section>
+
+    <section class="rankings-panel" aria-labelledby="rankings-title">
+      <div class="panel-heading">
+        <div>
+          <span class="section-kicker">THE RANKINGS</span>
+          <h2 id="rankings-title">Top contributors</h2>
+        </div>
+        <span class="top-count">TOP 10</span>
+      </div>
+      <div class="ranking-labels" aria-hidden="true"><span>RANK / MEMBER</span><span>DUZ EARNED</span></div>
+      <ol id="leaderboard-list" aria-live="polite" aria-busy="true">
+        <li class="state-row">Loading the rankings…</li>
+      </ol>
+      <div class="panel-foot"><span class="foot-mark"></span> Rankings are based on total DUZ balance.</div>
+    </section>
+
+    <section class="leaderboard-cta">
+      <div>
+        <span class="section-kicker">YOUR TURN</span>
+        <h2>Ready to climb?</h2>
+        <p>Take on a contribution and start building your position.</p>
+      </div>
+      <a href="task.html" class="cta-button">Explore tasks <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
 
-      <a href="how-it-works.html" class="floating-help-btn" title="How It Works">
-  ?
-</a>
-
-  <footer>
-    © 2026 DAUUZ : Built in public.
-  </footer>
-  
+  <a href="how-it-works.html" class="floating-help-btn" title="How It Works" aria-label="How it works">?</a>
+  <footer>© 2026 DAUUZ <span>·</span> Built in public.</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/leaderboard.js"></script>
-
-  <script>
-  const btn = document.getElementById("menu-btn");
-  const links = document.getElementById("nav-links");
-
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
-    links.classList.toggle("open");
-  });
-</script>
-
 </body>
 </html>
-
