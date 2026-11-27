@@ -111,7 +111,7 @@
         </article>
 
         <article class="task-card" data-category="ideas" data-search="ideas suggestions innovation propose">
-          <div class="task-image"><img src="https://images.unsplash.com/photo-1455390582262-044cDead8028?auto=format&fit=crop&w=900&q=80" alt="Notebook ready for new ideas"><span class="image-label">OPEN IDEAS</span><span class="image-symbol">↗</span></div>
+          <div class="task-image"><img src="https://images.unsplash.com/photo-1455390582262-044cdead8028?auto=format&fit=crop&w=900&q=80" alt="Notebook ready for new ideas"><span class="image-label">OPEN IDEAS</span><span class="image-symbol">↗</span></div>
           <div class="task-card-body"><div class="task-meta"><span>06 / THINK FORWARD</span><span class="task-status">OPEN SUBMISSION</span></div><h2>Submit an idea</h2><p>Have a genuine idea that could improve DAUUZ? Share it with the team for consideration.</p>
             <div class="reward-row"><div class="reward"><small>IF ADOPTED</small><strong>1 <i>DUZ</i></strong></div><span class="review-note">TEAM REVIEW</span></div>
             <div class="idea-form"><label for="ideaContent">Your idea</label><textarea id="ideaContent" placeholder="Describe your idea and why it could make a difference..."></textarea><button id="idea-btn" class="submit-button" type="button">Submit idea <span>→</span></button></div>
@@ -133,11 +133,6 @@
       const menuButton = document.getElementById('menu-btn');
       const nav = document.getElementById('nav-links');
       if (menuButton && nav) {
-        menuButton.addEventListener('click', () => {
-          const open = nav.classList.toggle('open');
-          menuButton.classList.toggle('active', open);
-          menuButton.setAttribute('aria-expanded', String(open));
-        });
         nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
           nav.classList.remove('open');
           menuButton.classList.remove('active');
