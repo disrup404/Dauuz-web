@@ -32,7 +32,7 @@
         <h1>Good to see you,<br><em id="username-display">User</em>.</h1>
         <p>Here’s where your DAUUZ activity stands. Keep contributing and track your progress as it grows.</p>
       </div>
-      <a class="explore-link" href="task.html">Explore contributions <span>↗</span></a>
+      <div class="welcome-actions"><button class="profile-edit-trigger" id="edit-profile-btn" type="button">Edit profile <span>↗</span></button><a class="explore-link" href="task.html">Explore contributions <span>↗</span></a></div>
     </section>
 
     <section class="balance-card" aria-label="DUZ balance">
@@ -69,6 +69,23 @@
       <a href="task.html">Explore activities <b>→</b></a>
     </section>
   </main>
+
+  <div class="profile-modal" id="profile-modal" aria-hidden="true">
+    <div class="profile-modal-backdrop" data-close-profile></div>
+    <section class="profile-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-dialog-title">
+      <button class="profile-close" type="button" data-close-profile aria-label="Close">×</button>
+      <div class="eyebrow"><span></span> ACCOUNT SETTINGS</div>
+      <h2 id="profile-dialog-title">Edit your profile</h2>
+      <p class="profile-modal-copy">Update the username displayed across your DAUUZ account.</p>
+      <form id="profile-form">
+        <label for="profile-username">Username</label>
+        <input id="profile-username" name="username" type="text" maxlength="30" minlength="3" autocomplete="username" required>
+        <small>3–30 characters. This changes your displayed username, not your login email.</small>
+        <p class="profile-message" id="profile-message" role="status" aria-live="polite"></p>
+        <div class="profile-form-actions"><button type="button" class="profile-cancel" data-close-profile>Cancel</button><button type="submit" class="profile-save" id="profile-save-btn">Save changes <span>→</span></button></div>
+      </form>
+    </section>
+  </div>
 
   <a href="how-it-works.html" class="floating-help-btn" title="How It Works" aria-label="How it works">?</a>
   <footer class="site-footer"><a class="footer-brand" href="index.html">DAUUZ</a><span>CONTRIBUTION IS THE FOUNDATION.</span><span>© 2026 DAUUZ · BUILT IN PUBLIC.</span></footer>
